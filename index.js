@@ -14,3 +14,22 @@ function fibs(num){
 };
 fibs(5);
 
+let previousNum = 0, nextNum = 1, sum = 0, index = 0;  
+function fibsRec(num) {
+    
+    if (index >= num){
+        console.log('haa')
+  
+    } else{
+      console.log(previousNum);
+
+        sum = previousNum + nextNum;
+        previousNum = nextNum;
+        nextNum = sum;
+        index++;
+        fibsRec(num);        
+    }
+
+};
+fibsRec(5)
+
