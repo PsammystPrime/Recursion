@@ -29,3 +29,13 @@ function fibsRec(num) {
     }
 };
 
+//Sorting an array using the sort method
+function Sort() {
+    const array = [3, 2, 1, 13, 8, 5, 0, 1] 
+     const secondArray = array.sort((a,b)=>{
+        return a-b
+     })
+
+    console.log(secondArray)
+};
+
