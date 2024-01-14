@@ -81,24 +81,18 @@ function sort(){
     
     if (arrayA == '' || arrayB == ''){
         console.log('empty')
-    } else
-    if (arrayA[0] < arrayB[0] ){
-    const a =  arrayA.splice(0,1)
-        arrayC.push(a)
-        console.log('small')    
+    } 
+     else if (arrayA[0] < arrayB[0] ){
+        const a =  arrayA.splice(0,1)
+        arrayC.push(a)   
         sort()
     } else { 
         let b = arrayB.splice(0,1)
-        arrayC.push(b) 
-        console.log('big')        
+        arrayC.push(b)    
         sort()
     }
-        
-        // console.log(arrayB)
-        console.log(arrayC)
-
-}
+};
 
 sort()
-
+console.log(arrayC)
 
