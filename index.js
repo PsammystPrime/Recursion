@@ -73,5 +73,32 @@ function mergeSort() {
 }
 // mergeSort()
 
+const arrayA = [1,4,6]
+let arrayB = [2,3,5]
+let arrayC = []
+
+function sort(){
+    
+    if (arrayA == '' || arrayB == ''){
+        console.log('empty')
+    } else
+    if (arrayA[0] < arrayB[0] ){
+    const a =  arrayA.splice(0,1)
+        arrayC.push(a)
+        console.log('small')    
+        sort()
+    } else { 
+        let b = arrayB.splice(0,1)
+        arrayC.push(b) 
+        console.log('big')        
+        sort()
+    }
+        
+        // console.log(arrayB)
+        console.log(arrayC)
+
+}
+
+sort()
 
 
