@@ -39,10 +39,10 @@ function Sort() {
     console.log(secondArray)
 };
 
-//sorting the same array using the mergesort method
+            //*sorting the same array using the mergesort method*/
 function mergeSort() {
     const array = [3, 2, 1, 13, 8, 5, 0, 1] 
-   // Divide array by half and sort them each
+   // Divide array by half and sort them each and sort them
     const arrayLength = array.length/2; //finding the centre of the array
     const leftArr = array.splice(0, arrayLength);
     const divide = array.length/2 ; // Divide the smaleer arrays by half
@@ -55,132 +55,142 @@ function mergeSort() {
     const finalArray = []
     const mergedLeftArray = []
     const mergedRightArray = []
-    function mergeLeftPart(){
+
+    function sort(arrayA, arrayB, arrayC){
     
-        if (leftLeftArr == '' && leftArr == '' ){
-            console.log('Finished merging left part')
-            console.log(mergedLeftArray)
+        if (arrayA == '' && arrayB == '' ){
+            console.log('Finished merging')
+            console.log(arrayC)
             
-        } else if (leftLeftArr[0] < leftArr[0] ){
-            const a =  leftLeftArr.splice(0,1)
+        } else if (arrayA[0] < arrayB[0] ){
+            const a =  arrayA.splice(0,1)
             let b = Number(a)
-            mergedLeftArray.push(b)   
-            mergeLeftPart()
+            arrayC.push(b)   
+            sort(arrayA, arrayB, arrayC)
         } else { 
-            let a = leftArr.splice(0,1)
+            let a = arrayB.splice(0,1)
             let b = Number(a)
-            mergedLeftArray.push(b)    
-            mergeLeftPart()
+            arrayC.push(b)    
+            sort(arrayA, arrayB, arrayC)
         }
     };
-    mergeLeftPart()
 
-    function mergeRightPart(){
+    function f(){
+        const mergeLeftPart = sort(leftLeftArr, leftArr, mergedLeftArray)
+        return console.log(mergedLeftArray)
+    } 
+    f()
+
+    function g() {
+        const mergeRightPart = sort(rightLeftArr, rightArr, mergedRightArray)
+        console.log(mergedRightArray)
+    }
+    g()
+
+    function h(){
+        const mergeFinalArray = sort(mergedRightArray, mergedLeftArray, finalArray)
+        console.log(finalArray)
+    }
+    h()
+
+
+
+
+
+
+
+    // function me(){
     
-        if (rightLeftArr == '' && rightArr == '' ){
-            console.log('Finished merging right part')
-            console.log(mergedRightArray)
+    //     if (leftLeftArr == '' && leftArr == '' ){
+    //         console.log('Finished merging left part')
+    //         console.log(mergedLeftArray)
             
-        } else if (rightLeftArr[0] < rightArr[0] ){
-            const a =  rightLeftArr.splice(0,1)
-            let b = Number(a)
-            mergedRightArray.push(b)   
-            mergeRightPart()
-        } else { 
-            let a = rightArr.splice(0,1)
-            let b = Number(a)
-            mergedRightArray.push(b)    
-            mergeRightPart()
-        }
-    };
-    mergeRightPart()
+    //     } else if (leftLeftArr[0] < leftArr[0] ){
+    //         const a =  leftLeftArr.splice(0,1)
+    //         let b = Number(a)
+    //         mergedLeftArray.push(b)   
+    //         mergeLeftPart()
+    //     } else { 
+    //         let a = leftArr.splice(0,1)
+    //         let b = Number(a)
+    //         mergedLeftArray.push(b)    
+    //         mergeLeftPart()
+    //     }
+    // };
+    // mergeLeftPart()
 
-    function mergeFinalArray(){
+    // function mergeRightPart(){
     
-        if (mergedRightArray == '' && mergedLeftArray == '' ){
-            console.log('Finished merging original array')
-            console.log(finalArray)
+    //     if (rightLeftArr == '' && rightArr == '' ){
+    //         console.log('Finished merging right part')
+    //         console.log(mergedRightArray)
             
-        } else if (mergedRightArray[0] < mergedLeftArray[0] ){
-            const a =  mergedRightArray.splice(0,1)
-            let b = Number(a)
-            finalArray.push(b)   
-            mergeFinalArray()
-        } else { 
-            let a = mergedLeftArray.splice(0,1)
-            let b = Number(a)
-            finalArray.push(b)    
-            mergeFinalArray()
-        }
-    };
-    mergeFinalArray()
+    //     } else if (rightLeftArr[0] < rightArr[0] ){
+    //         const a =  rightLeftArr.splice(0,1)
+    //         let b = Number(a)
+    //         mergedRightArray.push(b)   
+    //         mergeRightPart()
+    //     } else { 
+    //         let a = rightArr.splice(0,1)
+    //         let b = Number(a)
+    //         mergedRightArray.push(b)    
+    //         mergeRightPart()
+    //     }
+    // };
+    // mergeRightPart()
 
-    // // Get the right half array
-    //  const array3 = array.sort((a,b)=>{
-    //     return
-    //  })
-    // //Get the half of the left half
+    // function mergeFinalArray(){
     
-    // .sort() //sorted
-    // //Get the right half of the left half
-    // const rightLeftArr = leftArr //Sorted
-    //     //sort the right half of the array
-
-    console.log(leftArr)
-    console.log(leftLeftArr)        
-    console.log()
-    console.log(rightArr)
-    console.log(rightLeftArr)
+    //     if (mergedRightArray == '' && mergedLeftArray == '' ){
+    //         console.log('Finished merging original array')
+    //         console.log(finalArray)
+            
+    //     } else if (mergedRightArray[0] < mergedLeftArray[0] ){
+    //         const a =  mergedRightArray.splice(0,1)
+    //         let b = Number(a)
+    //         finalArray.push(b)   
+    //         mergeFinalArray()
+    //     } else { 
+    //         let a = mergedLeftArray.splice(0,1)
+    //         let b = Number(a)
+    //         finalArray.push(b)    
+    //         mergeFinalArray()
+    //     }
+    // };
+    // mergeFinalArray()
 
 }
 mergeSort()
 
 
-let arrayA = [1,4,5]
-let arrayB = [2,3,6]
-let arrayC = []
-let arrayD = [7,9,11]
-let arrayE = [8,10,12]
+// let arrayA = [1,4,5]
+// let arrayB = [2,3,6]
+// let arrayC = []
+// let arrayD = [7,9,11]
+// let arrayE = [8,10,12]
 
 
-function sort(){
-    
-    if (arrayA == '' && arrayB == '' ){
-        console.log('Finished merging')
-        console.log(arrayC)
-        sort2()
-    } else if (arrayA[0] < arrayB[0] ){
-        const a =  arrayA.splice(0,1)
-        let b = Number(a)
-        arrayC.push(b)   
-        sort()
-    } else { 
-        let a = arrayB.splice(0,1)
-        let b = Number(a)
-        arrayC.push(b)    
-        sort()
-    }
-};
-// sort()
 
-console.log()
+// // sort()
+
+// console.log()
 
 
-function sort2(){
-    if (arrayD == '' && arrayE == '' ){
-        console.log('Finished merging too')
-        console.log(arrayC)
-    } else if (arrayD[0] < arrayE[0] ){
-        const a =  arrayD.splice(0,1)
-        let b = Number(a)
-        arrayC.push(b)   
-        sort2()
-    } else { 
-        let a = arrayE.splice(0,1)
-        let b = Number(a)
-        arrayC.push(b)    
-        sort2()
-    }
+// function sort2(){
+//     if (arrayD == '' && arrayE == '' ){
+//         console.log('Finished merging too')
+//         console.log(arrayC)
+//     } else if (arrayD[0] < arrayE[0] ){
+//         const a =  arrayD.splice(0,1)
+//         let b = Number(a)
+//         arrayC.push(b)   
+//         sort2()
+//     } else { 
+//         let a = arrayE.splice(0,1)
+//         let b = Number(a)
+//         arrayC.push(b)    
+//         sort2()
+//     }
 
-};
+// };
 
