@@ -47,11 +47,11 @@ function mergeSort() {
     const leftArr = array.splice(0, arrayLength);
     const divide = array.length/2 ; // Divide the smaleer arrays by half
     const leftLeftArr = leftArr.splice(0, divide).sort(); //Get the left arr of the left part
-
+    // Sort right part of the original array
     const rightArr = array.sort()
     const rightLeftArr = rightArr.splice(0, divide); //Get the left arr of the right part
 
-    //Merge Arrays
+    //Merge Left & Right Parts of the original Array
     const finalArray = []
     const mergedLeftArray = []
     const mergedRightArray = []
@@ -77,13 +77,11 @@ function mergeSort() {
         const mergeLeftPart = sort(leftLeftArr, leftArr, mergedLeftArray)
         console.log(mergedLeftArray)
     }; mergeLeftPart()
-   
 
     function mergeRightPart() {
         const mergeRightPart = sort(rightLeftArr, rightArr, mergedRightArray)
         console.log(mergedRightArray)
     }; mergeRightPart()
-   
 
     function mergeFinalArray(){
         const mergeFinalArray = sort(mergedRightArray, mergedLeftArray, finalArray)
