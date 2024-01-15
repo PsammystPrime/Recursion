@@ -75,7 +75,25 @@ function mergeSort() {
     };
     mergeLeftPart()
 
- 
+    function mergeRightPart(){
+    
+        if (rightLeftArr == '' && rightArr == '' ){
+            console.log('Finished merging right part')
+            console.log(mergedRightArray)
+            
+        } else if (rightLeftArr[0] < rightArr[0] ){
+            const a =  rightLeftArr.splice(0,1)
+            let b = Number(a)
+            mergedRightArray.push(b)   
+            mergeRightPart()
+        } else { 
+            let a = rightArr.splice(0,1)
+            let b = Number(a)
+            mergedRightArray.push(b)    
+            mergeRightPart()
+        }
+    };
+    mergeRightPart()
 
     
 
