@@ -73,22 +73,21 @@ function mergeSort() {
 }
 // mergeSort()
 
-const arrayA = [1,4,6]
-let arrayB = [2,3,5]
+let arrayA = [1,4,5]
+let arrayB = [2,3,6]
 let arrayC = []
+let arrayD = [7,9,11]
+let arrayE = [8,10,12]
+
 
 function sort(){
     
-    if (arrayA == '' && arrayB == ''){
-        console.log('empty')
-    } else if(arrayB == ''){
-      let a = arrayC.concat(arrayA)
-    //   let b = a.toString()
-    //   arrayC.push(b)
-        console.log(a)
-    }
-     else if (arrayA[0] < arrayB[0] ){
-        const a =  (arrayA.splice(0,1))
+    if (arrayA == '' && arrayB == '' ){
+        console.log('Finished merging')
+        console.log(arrayC)
+        sort2()
+    } else if (arrayA[0] < arrayB[0] ){
+        const a =  arrayA.splice(0,1)
         let b = Number(a)
         arrayC.push(b)   
         sort()
@@ -99,7 +98,28 @@ function sort(){
         sort()
     }
 };
-
 sort()
-// console.log(arrayC)
+
+console.log()
+
+
+function sort2(){
+    if (arrayD == '' && arrayE == ''){
+        console.log('empty too')
+    } else if(arrayD == ''){
+        let a = arrayC.concat(arrayE)
+        console.log(a)
+    }
+     else if (arrayE[0] < arrayD[0] ){
+        const a =  arrayE.splice(0,1)
+        let b = Number(a)
+        arrayC.push(b)   
+        sort2()
+    } else { 
+        let a = arrayD.splice(0,1)
+        let b = Number(a)
+        arrayC.push(b)    
+        sort2()
+    }
+};
 
