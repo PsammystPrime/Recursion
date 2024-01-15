@@ -104,22 +104,20 @@ console.log()
 
 
 function sort2(){
-    if (arrayD == '' && arrayE == ''){
-        console.log('empty too')
-    } else if(arrayD == ''){
-        let a = arrayC.concat(arrayE)
-        console.log(a)
-    }
-     else if (arrayE[0] < arrayD[0] ){
-        const a =  arrayE.splice(0,1)
+    if (arrayD == '' && arrayE == '' ){
+        console.log('Finished merging too')
+        console.log(arrayC)
+    } else if (arrayD[0] < arrayE[0] ){
+        const a =  arrayD.splice(0,1)
         let b = Number(a)
         arrayC.push(b)   
         sort2()
     } else { 
-        let a = arrayD.splice(0,1)
+        let a = arrayE.splice(0,1)
         let b = Number(a)
         arrayC.push(b)    
         sort2()
     }
+
 };
 
