@@ -95,7 +95,25 @@ function mergeSort() {
     };
     mergeRightPart()
 
+    function mergeFinalArray(){
     
+        if (mergedRightArray == '' && mergedLeftArray == '' ){
+            console.log('Finished merging original array')
+            console.log(finalArray)
+            
+        } else if (mergedRightArray[0] < mergedLeftArray[0] ){
+            const a =  mergedRightArray.splice(0,1)
+            let b = Number(a)
+            finalArray.push(b)   
+            mergeFinalArray()
+        } else { 
+            let a = mergedLeftArray.splice(0,1)
+            let b = Number(a)
+            finalArray.push(b)    
+            mergeFinalArray()
+        }
+    };
+    mergeFinalArray()
 
     // // Get the right half array
     //  const array3 = array.sort((a,b)=>{
