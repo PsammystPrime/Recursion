@@ -79,20 +79,27 @@ let arrayC = []
 
 function sort(){
     
-    if (arrayA == '' || arrayB == ''){
+    if (arrayA == '' && arrayB == ''){
         console.log('empty')
-    } 
+    } else if(arrayB == ''){
+      let a = arrayC.concat(arrayA)
+    //   let b = a.toString()
+    //   arrayC.push(b)
+        console.log(a)
+    }
      else if (arrayA[0] < arrayB[0] ){
-        const a =  arrayA.splice(0,1)
-        arrayC.push(a)   
+        const a =  (arrayA.splice(0,1))
+        let b = Number(a)
+        arrayC.push(b)   
         sort()
     } else { 
-        let b = arrayB.splice(0,1)
+        let a = arrayB.splice(0,1)
+        let b = Number(a)
         arrayC.push(b)    
         sort()
     }
 };
 
 sort()
-console.log(arrayC)
+// console.log(arrayC)
 
