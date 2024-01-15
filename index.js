@@ -53,26 +53,31 @@ function mergeSort() {
 
     //Merge Arrays
     const finalArray = []
+    const mergedLeftArray = []
+    const mergedRightArray = []
+    function mergeLeftPart(){
     
-    function merger(){
-    
-        if (rightLeftArr == '' && leftLeftArr == '' ){
-            console.log('Finished merging')
-            console.log(finalArray)
+        if (leftLeftArr == '' && leftArr == '' ){
+            console.log('Finished merging left part')
+            console.log(mergedLeftArray)
             
-        } else if (rightLeftArr[0] < leftLeftArr[0] ){
-            const a =  rightLeftArr.splice(0,1)
+        } else if (leftLeftArr[0] < leftArr[0] ){
+            const a =  leftLeftArr.splice(0,1)
             let b = Number(a)
-            finalArray.push(b)   
-            merger()
+            mergedLeftArray.push(b)   
+            mergeLeftPart()
         } else { 
-            let a = leftLeftArr.splice(0,1)
+            let a = leftArr.splice(0,1)
             let b = Number(a)
-            finalArray.push(b)    
-            merger()
+            mergedLeftArray.push(b)    
+            mergeLeftPart()
         }
     };
-    merger()
+    mergeLeftPart()
+
+ 
+
+    
 
     // // Get the right half array
     //  const array3 = array.sort((a,b)=>{
@@ -85,12 +90,15 @@ function mergeSort() {
     // const rightLeftArr = leftArr //Sorted
     //     //sort the right half of the array
 
-        
+    console.log(leftArr)
+    console.log(leftLeftArr)        
     console.log()
-    // console.log(leftLeftArr)
-    // console.log(leftLeftArr)
+    console.log(rightArr)
+    console.log(rightLeftArr)
+
 }
 mergeSort()
+
 
 let arrayA = [1,4,5]
 let arrayB = [2,3,6]
